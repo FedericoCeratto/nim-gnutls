@@ -1,0 +1,41 @@
+
+== GnuTLS wrapper for Nim
+
+image:https://travis-ci.org/FedericoCeratto/nim-gnutls.svg?branch=master["Build Status", link="https://travis-ci.org/FedericoCeratto/nim-gnutls"]
+image:https://img.shields.io/badge/status-alpha-orange.svg[badge]
+image:https://img.shields.io/github/tag/FedericoCeratto/nim-gnutls.svg[tags]
+image:https://img.shields.io/badge/License-LGPL%20v2.1-blue.svg[License]
+
+WARNING: This library is under development and has not been reviewed by 3rd parties
+
+### Features
+
+* Wrap GnuTLS 3.6.6 (and supports other versions)
+* Tested on Linux
+* Basic unit tests
+* No homemade crypto
+
+### Usage
+
+Refer to the link:https://www.gnutls.org/manual/gnutls.html[official gnutls documentation]
+
+Install the development library:
+
+[source,bash]
+----
+sudo apt-get install libgnutls28-dev
+nimble install gnutls
+----
+
+Install the runtime dependency:
+
+[source,bash]
+----
+sudo apt-get install libgnutls30
+----
+
+See the tests/ dir for usage examples.
+
+### Contributing
+
+Testing and PRs are welcome.
