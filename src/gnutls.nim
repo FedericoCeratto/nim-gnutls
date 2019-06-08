@@ -1020,7 +1020,7 @@ type
   gnutls_priority_t* = ptr gnutls_priority_st
   gnutls_datum_t* {.bycopy.} = object
     data*: ptr cuchar
-    size*: cuint
+    size*: csize
 
   gnutls_params_st* {.bycopy.} = object
     `type`*: gnutls_params_type_t
@@ -1767,8 +1767,7 @@ proc gnutls_handshake_set_hook_function*(session: gnutls_session_t; htype: cuint
 type
   gnutls_handshake_simple_hook_func* = proc (a1: gnutls_session_t): cint
 
-const
-  gnutls_handshake_post_client_hello_func* = gnutls_handshake_simple_hook_func
+#const gnutls_handshake_post_client_hello_func* = gnutls_handshake_simple_hook_func
 
 proc gnutls_handshake_set_post_client_hello_function*(session: gnutls_session_t;
     `func`: gnutls_handshake_simple_hook_func) {.
@@ -2087,6 +2086,9 @@ type
   gnutls_is_secure_function* = proc (a1: pointer): cint
   gnutls_free_function* = proc (a1: pointer)
   gnutls_realloc_function* = proc (a1: pointer; a2: csize): pointer
+
+proc gnutls_free*(d:  gnutls_datum_t) {.
+  importc: "gnutls_free", gnutls_import.}
 
 proc gnutls_global_set_time_function*(time_func: gnutls_time_func) {.
     importc: "gnutls_global_set_time_function", gnutls_import.}

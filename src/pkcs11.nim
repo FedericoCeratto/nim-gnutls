@@ -151,8 +151,7 @@ const
   GNUTLS_PKCS11_OBJ_FLAG_RETRIEVE_DISTRUSTED = GNUTLS_PKCS11_OBJ_FLAG_MARK_DISTRUSTED
   GNUTLS_PKCS11_OBJ_FLAG_NO_STORE_PUBKEY = GNUTLS_PKCS11_OBJ_FLAG_PUBKEY
 
-const
-  gnutls_pkcs11_obj_attr_t* = gnutls_pkcs11_obj_flags
+#const gnutls_pkcs11_obj_attr_t* = gnutls_pkcs11_obj_flags
 
 ## *
 ##  gnutls_pkcs11_url_type_t:
